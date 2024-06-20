@@ -7,7 +7,7 @@ function createFloatingPlusOne() {
     clickCount++;
     
     // Update the counter display
-    document.getElementById('counter').innerText = `Натапано Сержей: ${clickCount}`;
+    document.getElementById('counter').innerText = `Total Clicks: ${clickCount}`;
     
     // Create a new +1 element
     const plusOne = document.createElement('div');
@@ -40,5 +40,11 @@ function createFloatingPlusOne() {
     button.classList.add('clicked');
 }
 
-// Add event listener to the button
+// Function to show a pop-up message
+function showPopupMessage() {
+    alert('Спасибо что не расскажите об этом никому');
+}
+
+// Add event listener to the buttons
 document.getElementById('circle-button').addEventListener('click', createFloatingPlusOne);
+document.getElementById('no-friends-button').addEventListener('click', showPopupMessage);
