@@ -7,7 +7,7 @@ function createFloatingPlusOne() {
     clickCount++;
     
     // Update the counter display
-    document.getElementById('counter').innerText = `Total Clicks: ${clickCount}`;
+    document.getElementById('counter').innerText = `Натапано Сержей: ${clickCount}`;
     
     // Create a new +1 element
     const plusOne = document.createElement('div');
