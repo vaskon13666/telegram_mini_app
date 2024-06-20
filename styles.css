@@ -79,8 +79,8 @@ body, html {
 /* Floating +1 style */
 .floating {
     position: absolute;
-    font-size: 24px;
-    color: #ff6f61; /* Set a contrasting color for +1 */
+    font-size: 36px;
+    color: #FFD700; /* Set a contrasting color for +1 */
     animation: floatUp 2s ease-out forwards;
 }
 
