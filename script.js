@@ -40,11 +40,17 @@ function createFloatingPlusOne() {
     button.classList.add('clicked');
 }
 
-// Function to show a pop-up message
-function showPopupMessage() {
-    alert('Спасибо что не расскажите об этом никому');
+// Function to show a custom message box
+function showMessageBox() {
+    const messageBox = document.getElementById('message-box');
+    messageBox.style.display = 'block';
+
+    // Automatically hide the message box after the animation ends
+    messageBox.addEventListener('animationend', () => {
+        messageBox.style.display = 'none';
+    }, { once: true });
 }
 
 // Add event listener to the buttons
 document.getElementById('circle-button').addEventListener('click', createFloatingPlusOne);
-document.getElementById('no-friends-button').addEventListener('click', showPopupMessage);
+document.getElementById('no-friends-button').addEventListener('click', showMessageBox);
