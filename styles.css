@@ -1,0 +1,96 @@
+/* Basic reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #581845; /* Set the background color */
+}
+
+/* Container to center the content */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Counter style */
+.counter {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff; /* Set counter text color to white for better visibility */
+}
+
+/* Circle button style */
+.circle-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url('images/1.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, border 0.3s;
+    position: relative;
+    border: 6px solid transparent; /* Default transparent border */
+}
+
+/* Add a gradient border */
+.circle-button::before {
+    content: '';
+    position: absolute;
+    top: -6px; /* Adjust the offset for border width */
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    background: linear-gradient(to top, black, purple);
+    z-index: -1;
+    transition: opacity 0.3s;
+}
+
+/* Style for when the button is clicked */
+.circle-button.clicked::before {
+    opacity: 0; /* Hide the gradient border */
+}
+
+/* Pulsing effect */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.circle-button.pulsing {
+    animation: pulse 0.3s ease-in-out;
+}
+
+/* Floating +1 style */
+.floating {
+    position: absolute;
+    font-size: 48px;
+    color: #F7DC6F; /* Set a contrasting color for +1 */
+    animation: floatUp 2s ease-out forwards;
+}
+
+/* Floating animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
